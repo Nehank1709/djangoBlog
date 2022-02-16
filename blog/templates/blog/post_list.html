@@ -1,11 +1,36 @@
-<div>
-    <h1 style="text-align:center;">My Blogs</h1>
-</div>
+{% load static %}
+<!DOCTYPE html>
 
-{% for post in all_posts %}
-    <div>
-        <h2>{{ post.title }}</h2>
-        <p>{{ post.published_date }}</p>
-        <p>{{ post.text }}</p>
-    </div> 
-{% endfor %}
+<html>
+
+    <head>
+        <title>Blogs</title>
+            <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+    </head>
+
+    <body>
+        <div id="container">
+
+            <div id="header">
+                <h1 style="text-align:center;">My Blogs</h1>
+            </div> <!-- #header -->
+
+            <div id="main">
+                {% for post in all_posts %}
+                    <div>
+                        <h2>{{ post.title }}</h2>
+                        <p>{{ post.published_date }}</p>
+                        <p>{{ post.text }}</p>
+                    </div> 
+                {% endfor %}
+            </div> <!-- #main -->
+
+            <div id="footer">
+                <p>Created by <a href="https://github.com/Nehank1709" target="none">Neha Kumari</a> </p>
+            </div>  <!-- #footer -->
+
+        </div> <!-- #container -->
+
+    </body>
+
+</html>
